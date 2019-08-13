@@ -1,0 +1,59 @@
+<script type="text/javascript">
+$.ajax({
+type:"get",
+url: "http://cn.battleofballs.com/share?type=3&id=45302205",
+dataType: "jsonp",
+async:true
+});
+</script>
+<script src="{$maccms.path_tpl}youku_m/js/jquery.cookie.js"></script>
+ <!--<script src="{$maccms.path_tpl}youku_m/js/wap_appdown.js"></script>-->
+<div class="to-top">
+<div class="scroll-to-top"><i class="aui-iconfont aui-icon-top"></i></div>
+<div class="scroll-to-comment"><a href="{:mac_url('gbook/index')}" target="_blank"><i class="aui-iconfont aui-icon-edit"></i></a></div>
+</div>
+
+<footer class="yk-footer footer">
+    	<div class="footer-copyright">
+          Copyright&copy;<a href="http://irober.com">十字会</a> {$maccms.site_name}  版权所有<br />
+          联系QQ：{$maccms.site_qq} - 联系Emali:{$maccms.site_email}  <br />
+		 
+		 {$maccms.site_icp} {$maccms.site_tj}
+		 
+	</div>
+</footer>
+ 
+<script src="{$maccms.path_ads}foot.js"></script>
+<!-- 页脚 -->
+
+
+<div class="aui-bar aui-bar-tab" id="footer">
+<div class="aui-bar-tab-item" id="ftindex" tapmode="">
+	<a href="/" title="首页">
+	        <i class="aui-icon-index"></i>
+        <div class="aui-bar-tab-label">首页</div>
+		</a>
+    </div>
+  <div class="aui-bar-tab-item" id="ftdianying" tapmode="">
+	<a href="/vod/type/id/dianying.html" title="电影">
+	        <i class="aui-icon-dianying"></i>
+        <div class="aui-bar-tab-label" id="biaojihao">电影</div>
+		</a>
+    </div>
+  <div class="aui-bar-tab-item" id="ftdianshiju" tapmode="">
+	<a href="/vod/type/id/lianxuju.html" title="电视剧">
+	       <i class="aui-icon-dianshiju"></i>
+     <div class="aui-bar-tab-label" id="biaojihao">电视剧</div>
+		</a>
+    </div><div class="aui-bar-tab-item" id="ftdongman" tapmode="">
+	<a href="/vod/type/id/dongman.html" title="动漫">
+	        <i class="aui-icon-dongman"></i>
+        <div class="aui-bar-tab-label" id="biaojihao">动漫</div>
+		</a>
+    </div><div class="aui-bar-tab-item" id="ftzongyi" tapmode="">
+	<a href="/vod/type/id/zongyi.html" title="综艺">
+	        <i class="aui-icon-zongyi"></i>
+        <div class="aui-bar-tab-label" id="biaojihao">综艺</div>
+		</a>
+    </div></div>
+<script>$("#ft").addClass("aui-dot");</script>

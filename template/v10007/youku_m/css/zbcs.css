@@ -1,0 +1,86 @@
+.mod-main {
+     
+    background: #FFF;
+}
+
+/*TV布局*/
+.mainmenu:after {
+    clear:both;
+    content:" ";
+    display:block
+}
+.mainmenu li {
+    float:left;
+    margin-left:2.5%;
+    margin-top:2.5%;
+    width:30%;
+    height:3.5rem;
+    border-radius:.15rem;
+    box-shadow: 4px 4px 15px #999;
+    overflow:hidden
+}
+.mainmenu li a {
+    display:block;
+    color:#FFF;
+    text-align:center
+}
+.mainmenu li a b {
+    display:block;
+    height:3.5rem
+}
+.mainmenu li a img {
+    margin:-.1rem 0 0 .2rem;
+    width:4.8rem;
+    height:3.4rem
+}
+.mainmenu li a span {
+    display:block;
+    height:3.5rem;
+    line-height:1.0rem;
+    background-color:#f0f0f0;
+    color:#999;
+    font-size:.75rem;
+    margin-top:-0.85rem
+}
+.mainmenu li:nth-child(8n+1) {
+    background-color:#ffe7ba
+}
+.mainmenu li:nth-child(8n+2) {
+    background-color:#ffe4c4
+}
+.mainmenu li:nth-child(8n+3) {
+    background-color:#ffd39b
+}
+.mainmenu li:nth-child(8n+4) {
+    background-color:#e9967a
+}
+.mainmenu li:nth-child(8n+5) {
+    background-color:#bcee68
+}
+.mainmenu li:nth-child(8n+6) {
+    background-color:#bcd2ee
+}
+.mainmenu li:nth-child(8n+7) {
+    background-color:#b4eeb4
+}
+.mainmenu li:nth-child(8n+8) {
+    background-color:#faebd7
+}
+.mainmenu li:nth-child(8n+9) {
+    background-color:#bfefff
+}
+.mainmenu li:nth-child(8n+10) {
+    background-color:#e5e5e5
+}
+.mainmenu li:nth-child(8n+11) {
+    background-color:#e0ffff
+}
+.mainmenu li:nth-child(8n+12) {
+    background-color:#ee6a50
+}
+.mainmenu li:nth-child(8n+13) {
+    background-color:#ffc1c1
+}
+.mainmenu li:nth-child(8n+14) {
+    background-color:#fffacd
+}

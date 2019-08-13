@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>东方卫视 - {$maccms.site_name}</title>
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="channel">
+<!--播放器-->
+    <div class="vod-tips" id="tips-1">
+	    <span class="aui-iconfont aui-icon-back"></span>
+	    <div class="vod-tips-title ellipsis-2">正在播放：东方卫视</div>
+	    <span class="iconfont icon-close"></span>
+	</div>
+	<section class="aplayer">
+	<video style="width: 100%;height:100%;" src="http://ivi.bupt.edu.cn/hls/dfhd.m3u8" type="application/x-mpegURL" autoplay="" controls=""></video>
+	</section>
+</div>
+{include file="label/zhiboyuan"}
+{include file="public/foot"}

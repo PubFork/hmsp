@@ -11,7 +11,7 @@
 {include file="public/head"}
 </div>
 <div class="slide">
-<div class="slide-box">
+<div class="slide-box" style="height: 80px">
 	<ul>{maccms:vod num="8" paging="no" type="all" level="9" order="desc" by="sort"}
 		<li style="background:#bed5dd url({$vo.vod_pic_slide|mac_url_img}) 50% 0 no-repeat;"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank">{$vo.vod_name}</a></li>{/maccms:vod}
 	</ul>

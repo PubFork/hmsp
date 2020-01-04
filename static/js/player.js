@@ -1,4 +1,208 @@
-﻿var killErrors=function(value){return true};window.onerror=null;window.onerror=killErrors;
-var base64EncodeChars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";var base64DecodeChars=new Array(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62,-1,-1,-1,63,52,53,54,55,56,57,58,59,60,61,-1,-1,-1,-1,-1,-1,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-1,-1,-1,-1,-1,-1,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-1,-1,-1,-1,-1);function base64encode(str){var out,i,len;var c1,c2,c3;len=str.length;i=0;out="";while(i<len){c1=str.charCodeAt(i++)&0xff;if(i==len){out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt((c1&0x3)<<4);out+="==";break}c2=str.charCodeAt(i++);if(i==len){out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt(((c1&0x3)<<4)|((c2&0xF0)>>4));out+=base64EncodeChars.charAt((c2&0xF)<<2);out+="=";break}c3=str.charCodeAt(i++);out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt(((c1&0x3)<<4)|((c2&0xF0)>>4));out+=base64EncodeChars.charAt(((c2&0xF)<<2)|((c3&0xC0)>>6));out+=base64EncodeChars.charAt(c3&0x3F)}return out}function base64decode(str){var c1,c2,c3,c4;var i,len,out;len=str.length;i=0;out="";while(i<len){do{c1=base64DecodeChars[str.charCodeAt(i++)&0xff]}while(i<len&&c1==-1);if(c1==-1)break;do{c2=base64DecodeChars[str.charCodeAt(i++)&0xff]}while(i<len&&c2==-1);if(c2==-1)break;out+=String.fromCharCode((c1<<2)|((c2&0x30)>>4));do{c3=str.charCodeAt(i++)&0xff;if(c3==61)return out;c3=base64DecodeChars[c3]}while(i<len&&c3==-1);if(c3==-1)break;out+=String.fromCharCode(((c2&0XF)<<4)|((c3&0x3C)>>2));do{c4=str.charCodeAt(i++)&0xff;if(c4==61)return out;c4=base64DecodeChars[c4]}while(i<len&&c4==-1);if(c4==-1)break;out+=String.fromCharCode(((c3&0x03)<<6)|c4)}return out}function utf16to8(str){var out,i,len,c;out="";len=str.length;for(i=0;i<len;i++){c=str.charCodeAt(i);if((c>=0x0001)&&(c<=0x007F)){out+=str.charAt(i)}else if(c>0x07FF){out+=String.fromCharCode(0xE0|((c>>12)&0x0F));out+=String.fromCharCode(0x80|((c>>6)&0x3F));out+=String.fromCharCode(0x80|((c>>0)&0x3F))}else{out+=String.fromCharCode(0xC0|((c>>6)&0x1F));out+=String.fromCharCode(0x80|((c>>0)&0x3F))}}return out}function utf8to16(str){var out,i,len,c;var char2,char3;out="";len=str.length;i=0;while(i<len){c=str.charCodeAt(i++);switch(c>>4){case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:out+=str.charAt(i-1);break;case 12:case 13:char2=str.charCodeAt(i++);out+=String.fromCharCode(((c&0x1F)<<6)|(char2&0x3F));break;case 14:char2=str.charCodeAt(i++);char3=str.charCodeAt(i++);out+=String.fromCharCode(((c&0x0F)<<12)|((char2&0x3F)<<6)|((char3&0x3F)<<0));break}}return out}
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2c 9={\'14\':a(s,n){2b 3.1c.q(\'{18}\',s).q(\'{18}\',s).q(\'{15}\',n).q(\'{15}\',n)},\'2j\':a(s,n){1B.1D=3.14(s,n)},\'1I\':a(){$(\'#d\').C(\'h\',3.13);1C(a(){9.10()},3.Z*20);$("#B").A(0).2k=3.1s+\'\'},\'1u\':a(){8($("#d").C(\'h\')!=3.y){$("#d").C(\'h\',3.y)}$("#d").S()},\'10\':a(){$(\'#d\').1E()},\'1H\':a(){3.L=1O;$(\'#X\').S()},\'H\':a(){E.R(\'<l>.9{2m: #2o;1e-1f:1g;1m:#1q;1r:V;1t:V;u:1v;1x:1A;g:\'+3.i+\';b:\'+3.f+\';1F-b:1G;}.9 v{g:6%;b:6%;}.9 #B{u:1J;!1N;g:6%;b:6%;}</l><Y 1X="9">\'+\'<m w="d" h="" F="0" G="x" g="6%" b="6%" l="u:I;z-J:K;"></m><m w="X" h="" F="0" G="x" g="6%" b="6%" l="u:I;z-J:K;1d:1h;"></m>\'+\'<v 1i="0" 1j="0" 1k="0"><1l><M w="B" 1n="1o" l="">&1p;</M></v></Y>\');3.N=$(\'.9\').A(0).N;3.O=$(\'.9\').A(0).O;E.R(\'<P\'+\'Q h="\'+3.D+3.e+\'.1w"></P\'+\'Q>\')},\'T\':a(){},\'1y\':a(){3.L=1z;3.U=\'\';8(4.W==\'1\'){4.j=p(4.j);4.k=p(4.k)}11 8(4.W==\'2\'){4.j=p(12(4.j));4.k=p(12(4.k))}3.c=1K.1L.1M();3.i=5.g;3.f=5.b;8(3.c.7("1P")>0||3.c.7("1Q")>0||3.c.7("1R")>0||3.c.7("1S")>0||3.c.7("1T")>0||3.c.7("1U")>0){3.i=5.1V;3.f=5.1W}8(3.i.7("16")==-1&&3.i.7("%")==-1){3.i=\'6%\'}8(3.f.7("16")==-1&&3.f.7("%")==-1){3.f=\'6%\'}3.13=5.1Y;3.y=5.d;3.Z=5.1Z;3.17=4.21;3.22=4.23;3.24=4.25;3.1c=26(4.27);3.e=4.28;3.29=4.2a;3.r=4.19==\'x\'?\'\':4.19;3.2d=4.j;3.2e=4.k;3.2f=4.2g;3.2h=4.2i;8(5.1a[3.r]!=1b){3.r=5.1a[3.r].2l}8(5.o[3.e]!=1b){8(5.o[3.e].2n=="1"){3.U=5.o[3.e].t==\'\'?5.t:5.o[3.e].t;3.e=\'t\'}}3.D=2p.2q+\'/2r/2s/\';8(3.17=="2t"){9.T()}11{9.H()}}};',62,154,'|||this|player_data|MacPlayerConfig|100|indexOf|if|MacPlayer|function|height|Agent|buffer|PlayFrom|Height|width|src|Width|url|url_next|style|iframe||player_list|unescape|replace|PlayServer||parse|position|table|id|no|Buffer||get|playleft|attr|Path|document|frameBorder|scrolling|Play|absolute|index|99998|Status|td|offsetHeight|offsetWidth|scr|ipt|write|show|Down|Parse|0px|encrypt|install|div|Second|AdsEnd|else|base64decode|Prestrain|GetUrl|nid|px|Flag|sid|server|server_list|undefined|Link|display|font|size|14px|none|border|cellpadding|cellspacing|tr|color|valign|top|nbsp|F6F6F6|margin|Html|padding|AdsStart|relative|js|overflow|Init|true|hidden|location|setTimeout|href|hide|min|100px|Install|Show|inherit|navigator|userAgent|toLowerCase|important|false|android|mobile|ipod|ios|iphone|ipad|widthmob|heightmob|class|prestrain|second|1000|flag|Trysee|trysee|Points|points|decodeURIComponent|link|from|PlayNote|note|return|var|PlayUrl|PlayUrlNext|PlayLinkNext|link_next|PlayLinkPre|link_pre|Go|innerHTML|des|background|ps|000000|maccms|path|static|player|down'.split('|'),0,{}))
+var killErrors=function(value){return true};window.onerror=null;window.onerror=killErrors;
+var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+var base64DecodeChars = new Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
+
+function base64encode(str) {
+	var out, i, len;
+	var c1, c2, c3;
+	len = str.length;
+	i = 0;
+	out = "";
+	while (i < len) {
+		c1 = str.charCodeAt(i++) & 0xff;
+		if (i == len) {
+			out += base64EncodeChars.charAt(c1 >> 2);
+			out += base64EncodeChars.charAt((c1 & 0x3) << 4);
+			out += "==";
+			break
+		}
+		c2 = str.charCodeAt(i++);
+		if (i == len) {
+			out += base64EncodeChars.charAt(c1 >> 2);
+			out += base64EncodeChars.charAt(((c1 & 0x3) << 4) | ((c2 & 0xF0) >> 4));
+			out += base64EncodeChars.charAt((c2 & 0xF) << 2);
+			out += "=";
+			break
+		}
+		c3 = str.charCodeAt(i++);
+		out += base64EncodeChars.charAt(c1 >> 2);
+		out += base64EncodeChars.charAt(((c1 & 0x3) << 4) | ((c2 & 0xF0) >> 4));
+		out += base64EncodeChars.charAt(((c2 & 0xF) << 2) | ((c3 & 0xC0) >> 6));
+		out += base64EncodeChars.charAt(c3 & 0x3F)
+	}
+	return out
+}
+function base64decode(str) {
+	var c1, c2, c3, c4;
+	var i, len, out;
+	len = str.length;
+	i = 0;
+	out = "";
+	while (i < len) {
+		do {
+			c1 = base64DecodeChars[str.charCodeAt(i++) & 0xff]
+		} while (i < len && c1 == -1);
+		if (c1 == -1) break;
+		do {
+			c2 = base64DecodeChars[str.charCodeAt(i++) & 0xff]
+		} while (i < len && c2 == -1);
+		if (c2 == -1) break;
+		out += String.fromCharCode((c1 << 2) | ((c2 & 0x30) >> 4));
+		do {
+			c3 = str.charCodeAt(i++) & 0xff;
+			if (c3 == 61) return out;
+			c3 = base64DecodeChars[c3]
+		} while (i < len && c3 == -1);
+		if (c3 == -1) break;
+		out += String.fromCharCode(((c2 & 0XF) << 4) | ((c3 & 0x3C) >> 2));
+		do {
+			c4 = str.charCodeAt(i++) & 0xff;
+			if (c4 == 61) return out;
+			c4 = base64DecodeChars[c4]
+		} while (i < len && c4 == -1);
+		if (c4 == -1) break;
+		out += String.fromCharCode(((c3 & 0x03) << 6) | c4)
+	}
+	return out
+}
+function utf16to8(str) {
+	var out, i, len, c;
+	out = "";
+	len = str.length;
+	for (i = 0; i < len; i++) {
+		c = str.charCodeAt(i);
+		if ((c >= 0x0001) && (c <= 0x007F)) {
+			out += str.charAt(i)
+		} else if (c > 0x07FF) {
+			out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+			out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+			out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F))
+		} else {
+			out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+			out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F))
+		}
+	}
+	return out
+}
+function utf8to16(str) {
+	var out, i, len, c;
+	var char2, char3;
+	out = "";
+	len = str.length;
+	i = 0;
+	while (i < len) {
+		c = str.charCodeAt(i++);
+		switch (c >> 4) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+			out += str.charAt(i - 1);
+			break;
+		case 12:
+		case 13:
+			char2 = str.charCodeAt(i++);
+			out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F));
+			break;
+		case 14:
+			char2 = str.charCodeAt(i++);
+			char3 = str.charCodeAt(i++);
+			out += String.fromCharCode(((c & 0x0F) << 12) | ((char2 & 0x3F) << 6) | ((char3 & 0x3F) << 0));
+			break
+		}
+	}
+	return out
+}
+var MacPlayer = {
+	'GetUrl': function(s, n) {
+		return this.Link.replace('{sid}', s).replace('{sid}', s).replace('{nid}', n).replace('{nid}', n)
+	},
+	'Go': function(s, n) {
+		location.href = this.GetUrl(s, n)
+	},
+	'Show': function() {
+		$('#buffer').attr('src', this.Prestrain);
+		setTimeout(function() {
+			MacPlayer.AdsEnd()
+		}, this.Second * 1000);
+		$("#playleft").get(0).innerHTML = this.Html + '';
+	},
+	'AdsStart': function() {
+		if ($("#buffer").attr('src') != this.Buffer) {
+			$("#buffer").attr('src', this.Buffer)
+		}
+		$("#buffer").show()
+	},
+	'AdsEnd': function() {
+		$('#buffer').hide()
+	},
+	'Install': function() {
+		this.Status = false;
+		$('#install').show()
+	},
+	'Play': function() {
+		document.write('<style>.MacPlayer{background: #000000;font-size:14px;color:#F6F6F6;margin:0px;padding:0px;position:relative;overflow:hidden;width:' + this.Width + ';height:' + this.Height + ';min-height:100px;}.MacPlayer table{width:100%;height:100%;}.MacPlayer #playleft{position:inherit;!important;width:100%;height:100%;}</style><div class="MacPlayer">' + '<iframe id="buffer" src="" frameBorder="0" scrolling="no" width="100%" height="100%" style="position:absolute;z-index:99998;"></iframe><iframe id="install" src="" frameBorder="0" scrolling="no" width="100%" height="100%" style="position:absolute;z-index:99998;display:none;"></iframe>' + '<table border="0" cellpadding="0" cellspacing="0"><tr><td id="playleft" valign="top" style="">&nbsp;</td></table></div>');
+		this.offsetHeight = $('.MacPlayer').get(0).offsetHeight;
+		this.offsetWidth = $('.MacPlayer').get(0).offsetWidth;
+		document.write('<scr' + 'ipt src="' + this.Path + this.PlayFrom + '.js"></scr' + 'ipt>')
+	},
+	'Down': function() {},
+	'Init': function() {
+		this.Status = true;
+		this.Parse = '';
+		if (player_data.encrypt == '1') {
+			player_data.url = unescape(player_data.url);
+			player_data.url_next = unescape(player_data.url_next)
+		} else if (player_data.encrypt == '2') {
+			player_data.url = unescape(base64decode(player_data.url));
+			player_data.url_next = unescape(base64decode(player_data.url_next))
+		}
+		this.Agent = navigator.userAgent.toLowerCase();
+		this.Width = MacPlayerConfig.width;
+		this.Height = MacPlayerConfig.height;
+		if (this.Agent.indexOf("android") > 0 || this.Agent.indexOf("mobile") > 0 || this.Agent.indexOf("ipod") > 0 || this.Agent.indexOf("ios") > 0 || this.Agent.indexOf("iphone") > 0 || this.Agent.indexOf("ipad") > 0) {
+			this.Width = MacPlayerConfig.widthmob;
+			this.Height = MacPlayerConfig.heightmob
+		}
+		if (this.Width.indexOf("px") == -1 && this.Width.indexOf("%") == -1) {
+			this.Width = '100%'
+		}
+		if (this.Height.indexOf("px") == -1 && this.Height.indexOf("%") == -1) {
+			this.Height = '100%'
+		}
+		this.Prestrain = MacPlayerConfig.prestrain;
+		this.Buffer = MacPlayerConfig.buffer;
+		this.Second = MacPlayerConfig.second;
+		this.Flag = player_data.flag;
+		this.Trysee = player_data.trysee;
+		this.Points = player_data.points;
+		this.Link = decodeURIComponent(player_data.link);
+		this.PlayFrom = player_data.from;
+		this.PlayNote = player_data.note;
+		this.PlayServer = player_data.server == 'no' ? '' : player_data.server;
+		this.PlayUrl = player_data.url;
+		this.PlayUrlNext = player_data.url_next;
+		this.PlayLinkNext = player_data.link_next;
+		this.PlayLinkPre = player_data.link_pre;
+		if (MacPlayerConfig.server_list[this.PlayServer] != undefined) {
+			this.PlayServer = MacPlayerConfig.server_list[this.PlayServer].des
+		}
+		if (MacPlayerConfig.player_list[this.PlayFrom] != undefined) {
+			if (MacPlayerConfig.player_list[this.PlayFrom].ps == "1") {
+				this.Parse = MacPlayerConfig.player_list[this.PlayFrom].parse == '' ? MacPlayerConfig.parse : MacPlayerConfig.player_list[this.PlayFrom].parse;
+				this.PlayFrom = 'parse'
+			}
+		}
+		this.Path = maccms.path + '/static/player/';
+		if (this.Flag == "down") {
+			MacPlayer.Down()
+		} else {
+			MacPlayer.Play()
+		}
+	}
+};
 MacPlayer.Init();

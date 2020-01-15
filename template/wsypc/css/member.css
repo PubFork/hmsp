@@ -23,7 +23,7 @@ input{font-family:"Microsoft Yahei",Simsun,sans-serif;font-size: 14px;}
 /*-----------------------------------------以上只为本地测试 上线时可删除以上全部样式-----------------------------------------*/
 
 /* 左侧会员导航菜单 */
-#member{width:1000px;margin:40px auto;font-size:14px;}
+#member{width:1000px;margin:20px auto;font-size:14px;}
 .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
 #member #left{background:#f7f7f7;border-right:1px #e2e2e2 solid;width:200px;min-height:670px;float:left;}
 #member #left .tou{text-align:center;padding:15px 0;border-bottom:1px #e2e2e2 solid;}
@@ -91,7 +91,7 @@ input{font-family:"Microsoft Yahei",Simsun,sans-serif;font-size: 14px;}
 
 /* header */
 .header{
-    height: 55px;
+    height: 85px;
     padding: 10px 0 0 0;
     overflow: hidden;
     margin-bottom: -40px;

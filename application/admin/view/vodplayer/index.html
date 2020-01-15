@@ -1,13 +1,14 @@
 {include file="../../../application/admin/view/public/head" /}
 <div class="page-container p10">
     <div class="my-toolbar-box">
+
         <div class="layui-btn-group">
             <a data-href="{:url('info')}" class="layui-btn layui-btn-primary j-iframe"><i class="layui-icon">&#xe654;</i>添加</a>
             <a data-href="{:url('import')}" class="layui-btn layui-btn-primary layui-upload" ><i class="layui-icon">&#xe654;</i>导入</a>
             <a data-href="{:url('index/select')}?tab=vod&col=status&tpl=select_state&url=vodplayer/field" data-width="470" data-height="100" data-checkbox="1" class="layui-btn layui-btn-primary j-select"><i class="layui-icon">&#xe620;</i>状态</a>
             <a data-href="{:url('index/select')}?tab=vod&col=ps&tpl=select_state&url=vodplayer/field" data-width="470" data-height="100" data-checkbox="1" class="layui-btn layui-btn-primary j-select"><i class="layui-icon">&#xe620;</i>解析状态</a>
-			<a data-href="/addons/mycj/jx.php" data-width="500" data-height="300" data-checkbox="1" class="layui-btn layui-btn-primary j-select"><i class="layui-icon">&#xe620;</i>批量修改解析接口</a>
         </div>
+
     </div>
 
     <form class="layui-form " method="post" id="pageListForm">
@@ -59,7 +60,7 @@
                 , layer = layui.layer
                 , $ = layui.jquery
                 , upload = layui.upload;
-	
+
         upload.render({
             elem: '.layui-upload'
             ,url: "{:url('vodplayer/import')}"

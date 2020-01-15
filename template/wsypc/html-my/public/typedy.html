@@ -1,5 +1,5 @@
 <div class="slide">
-<div class="slide-box" style="height: 80px">
+<div class="slide-box">
 	<ul>{maccms:vod num="6" paging="no" type="current" level="8,9" order="desc" by="sort"}
 		<li style="background:#bed5dd url({$vo.vod_pic_slide|mac_url_img}) 50% 0 no-repeat;"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank">{$vo.vod_name}</a></li>{/maccms:vod}
 	</ul>
@@ -26,7 +26,7 @@
 		<ul>
 			<p class="fn-clear">{maccms:type num="8" parent="current" order="asc" by="sort" id="vo1" key="key1"}{in name="$key1" value="5"}
 			</p><p class="fn-clear">{/in}
-				<a href="{:mac_url_type($vo1,[],'show')}" target="_blank">{$vo1.type_name}</a>{/maccms:type}
+				<a href="{:mac_url_type($vo1)}" target="_blank">{$vo1.type_name}</a>{/maccms:type}
 			</p>
 		</ul>
 	</div>

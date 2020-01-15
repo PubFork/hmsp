@@ -24,8 +24,7 @@
 	<div class="list_type_box">
 		<span>分类：</span>
 		<div class="list_type_a">
-			<a {if condition="$obj['type_id']==1"}class="on"{/if}{if condition="$obj['type_id']!=1"} href="{:mac_url_type($obj['parent'],['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}"{/if}>全部</a>
-			{maccms:type ids="child" parent="1" by="sort" order="asc"}
+			<a {if condition="$obj['type_id']==1"}class="on"{/if}{if condition="$obj['type_id']!=1"} href="{:mac_url_type($obj['parent'],['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}"{/if}>全部</a>{maccms:type ids="child" parent="1" by="sort" order="asc"}
 			<a {if condition="$vo['type_id'] == $obj['type_id']"}class="on"{/if} href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a>{/maccms:type}
 		</div>
 	</div>

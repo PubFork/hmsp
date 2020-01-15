@@ -30,7 +30,7 @@ return array (
     'site_waplogo' => 'static/images/logo.jpg',
     'template_dir' => 'default_pc',
     'html_dir' => 'html',
-    'mob_status' => '2',
+    'mob_status' => '0',
     'mob_template_dir' => 'default_wap',
     'mob_html_dir' => 'html',
     'site_tj' => '统计代码',
@@ -177,7 +177,7 @@ return array (
   'interface' => 
   array (
     'status' => '1',
-    'pass' => '2SM4RFA8KPEIBMLB',
+    'pass' => 'EJVWK4HRZ0ZDHYEF',
     'vodtype' => '动作=动作片',
     'arttype' => '头条=头条',
   ),

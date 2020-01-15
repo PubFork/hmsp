@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:41:"template/default_pc/html/index/index.html";i:1577975040;s:63:"/var/www/html/hmsp/template/default_pc/html/public/include.html";i:1577975040;s:60:"/var/www/html/hmsp/template/default_pc/html/public/head.html";i:1577975040;s:60:"/var/www/html/hmsp/template/default_pc/html/public/foot.html";i:1577975040;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:41:"template/default_pc/html/index/index.html";i:1547887594;s:80:"/Volumes/Transcend/PHPWeb/maccmsV10/template/default_pc/html/public/include.html";i:1544361894;s:77:"/Volumes/Transcend/PHPWeb/maccmsV10/template/default_pc/html/public/head.html";i:1545643730;s:77:"/Volumes/Transcend/PHPWeb/maccmsV10/template/default_pc/html/public/foot.html";i:1526363154;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <script src="<?php echo $maccms['path_tpl']; ?>js/jquery.superslide.js"></script>
 <script src="<?php echo $maccms['path_tpl']; ?>js/jquery.lazyload.js"></script>
 <script src="<?php echo $maccms['path_tpl']; ?>js/jquery.base.js"></script>
-<script>var maccms={"path":"","mid":"<?php echo $maccms['mid']; ?>","aid":"<?php echo $maccms['aid']; ?>","url":"<?php echo $maccms['site_url']; ?>","wapurl":"<?php echo $maccms['site_wapurl']; ?>","mob_status":"<?php echo $maccms['mob_status']; ?>"};</script>
+<script>var maccms={"path":"/maccmsV10","mid":"<?php echo $maccms['mid']; ?>","aid":"<?php echo $maccms['aid']; ?>","url":"<?php echo $maccms['site_url']; ?>","wapurl":"<?php echo $maccms['site_wapurl']; ?>","mob_status":"<?php echo $maccms['mob_status']; ?>"};</script>
 <script src="<?php echo $maccms['path']; ?>static/js/home.js"></script>
 <script></script>
 
@@ -31,7 +31,7 @@
             </form>
         </div>
         <div class="hotkeys">热搜：
-            <?php $_5e0dfd38f35b6=explode(',',$maccms['search_hot']); if(is_array($_5e0dfd38f35b6) || $_5e0dfd38f35b6 instanceof \think\Collection || $_5e0dfd38f35b6 instanceof \think\Paginator): if( count($_5e0dfd38f35b6)==0 ) : echo "" ;else: foreach($_5e0dfd38f35b6 as $key2=>$vo2): ?>
+            <?php $_5d4039f99fe6e=explode(',',$maccms['search_hot']); if(is_array($_5d4039f99fe6e) || $_5d4039f99fe6e instanceof \think\Collection || $_5d4039f99fe6e instanceof \think\Paginator): if( count($_5d4039f99fe6e)==0 ) : echo "" ;else: foreach($_5d4039f99fe6e as $key2=>$vo2): ?>
             <a href="<?php echo mac_url('vod/search',['wd'=>$vo2]); ?>"><?php echo $vo2; ?></a>
             <?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
@@ -79,7 +79,7 @@
                         <h5>地区</h5>
                         <div class="deansubptc">
                             <a href="<?php echo mac_url_type($vo1,[],'show'); ?>">全部</a>
-                            <?php $_5e0dfd38f34ac=explode(',',$vo1['type_extend']['area']); if(is_array($_5e0dfd38f34ac) || $_5e0dfd38f34ac instanceof \think\Collection || $_5e0dfd38f34ac instanceof \think\Paginator): if( count($_5e0dfd38f34ac)==0 ) : echo "" ;else: foreach($_5e0dfd38f34ac as $key2=>$vo2): ?>
+                            <?php $_5d4039f99fdce=explode(',',$vo1['type_extend']['area']); if(is_array($_5d4039f99fdce) || $_5d4039f99fdce instanceof \think\Collection || $_5d4039f99fdce instanceof \think\Paginator): if( count($_5d4039f99fdce)==0 ) : echo "" ;else: foreach($_5d4039f99fdce as $key2=>$vo2): ?>
                             <a href="<?php echo mac_url_type($vo1,['area'=>$vo2],'show'); ?>"><?php echo $vo2; ?></a>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </div>
@@ -88,7 +88,7 @@
                         <h5>年代</h5>
                         <div class="deansubptc">
                             <a href="<?php echo mac_url_type($vo1,[],'show'); ?>">全部</a>
-                            <?php $_5e0dfd38f3453=explode(',',$vo1['type_extend']['year']); if(is_array($_5e0dfd38f3453) || $_5e0dfd38f3453 instanceof \think\Collection || $_5e0dfd38f3453 instanceof \think\Paginator): if( count($_5e0dfd38f3453)==0 ) : echo "" ;else: foreach($_5e0dfd38f3453 as $key2=>$vo2): ?>
+                            <?php $_5d4039f99fd8f=explode(',',$vo1['type_extend']['year']); if(is_array($_5d4039f99fd8f) || $_5d4039f99fd8f instanceof \think\Collection || $_5d4039f99fd8f instanceof \think\Paginator): if( count($_5d4039f99fd8f)==0 ) : echo "" ;else: foreach($_5d4039f99fd8f as $key2=>$vo2): ?>
                             <a href="<?php echo mac_url_type($vo1,['year'=>$vo2],'show'); ?>"><?php echo $vo2; ?></a>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </div>
@@ -97,7 +97,7 @@
                         <h5>字母</h5>
                         <div class="deansubptc">
                             <a href="<?php echo mac_url_type($vo1,[],'show'); ?>">全部</a>
-                            <?php $_5e0dfd38f3407=explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9'); if(is_array($_5e0dfd38f3407) || $_5e0dfd38f3407 instanceof \think\Collection || $_5e0dfd38f3407 instanceof \think\Paginator): if( count($_5e0dfd38f3407)==0 ) : echo "" ;else: foreach($_5e0dfd38f3407 as $key2=>$vo2): ?>
+                            <?php $_5d4039f99fd63=explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9'); if(is_array($_5d4039f99fd63) || $_5d4039f99fd63 instanceof \think\Collection || $_5d4039f99fd63 instanceof \think\Paginator): if( count($_5d4039f99fd63)==0 ) : echo "" ;else: foreach($_5d4039f99fd63 as $key2=>$vo2): ?>
                             <a href="<?php echo mac_url_type($vo1,['letter'=>$vo2],'show'); ?>"><?php echo $vo2; ?></a>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </div>

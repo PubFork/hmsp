@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Error>
-  <Code>NoSuchKey</Code>
-  <Message>The specified key does not exist.</Message>
-  <RequestId>5E09AC1FD6A109353770706E</RequestId>
-  <HostId>caiji-api.oss-cn-shanghai.aliyuncs.com</HostId>
-  <Key>V10/maccmsv10.2.9.1.zip</Key>
-</Error>
